@@ -37,7 +37,7 @@ conda activate recbole-env
 3. Verify that the following files exist in the `dataset/ReRec` directory:
    ```
    ReRec_log_5core_ts.csv
-   ReRec_metadata.tsv
+   ReRec_metadata.csv
    ```
 
 4. Use the provided format conversion script `ReRec_recbole_convert.ipynb` (from the [ReRec main repository](https://github.com/wylapp/ReRec)) to generate atomic files. Place the script in `dataset/ReRec` and execute it.
@@ -49,7 +49,7 @@ dataset
     ├── ReRec.inter
     ├── ReRec.item
     ├── ReRec_log_5core_ts.csv
-    ├── ReRec_metadata.tsv
+    ├── ReRec_metadata.csv
     ├── ReRec_recbole_convert.ipynb
     ├── smap.json
     ├── umap.json
