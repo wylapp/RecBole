@@ -1,4 +1,4 @@
-# RecBole - Modified Version for ReRec Dataset
+# ReRec-RecBole - A Modified Version of RecBole
 
 This repository contains a modified version of the [RecBole](https://github.com/RUCAIBox/RecBole) framework, tailored for enhanced compatibility and performance with the **ReRec dataset**.
 
