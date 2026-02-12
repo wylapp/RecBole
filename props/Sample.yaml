@@ -1,0 +1,30 @@
+gpu_id: 0
+enable_amp: True
+enable_scaler: True
+
+embedding_size: 128             # (int) The embedding size of items.
+hidden_size: 128                # (int) The number of features in the hidden state.
+n_layers: 1                     # (int) The number of layers in GRU.
+dropout_probs: [0.25,0.5]       # (list of float) The dropout rate for embedding and concatenation.
+loss_type: 'CE'                 # (str) The type of loss function. Range in ['BPR', 'CE'].
+
+train_neg_sample_args: null
+epochs: 300                     # (int) The number of training epochs.
+train_batch_size: 2048
+stopping_step: 15
+load_col: 
+    inter: ['user_id', 'item_id', 'rating', 'timestamp']
+eval_args:                      # (dict) 4 keys: group_by, order, split, and mode
+  split: {'LS': "valid_and_test"}   # (dict) The splitting strategy ranging in ['RS','LS'].
+  group_by: user                # (str) The grouping strategy ranging in ['user', 'none'].
+  order: TO                     # (str) The ordering strategy ranging in ['RO', 'TO'].
+  mode: full                    # (str) The evaluation mode ranging in ['full','unixxx','popxxx','labeled'].
+repeatable: True                # (bool) Whether to evaluate results with a repeatable recommendation scene. 
+metrics: ["Recall","NDCG"]      # (list or str) Evaluation metrics.
+topk: [5,10,20]                 # (list or int or None) The value of k for topk evaluation metrics.
+valid_metric: Recall@10         # (str) The evaluation metric for early stopping. 
+valid_metric_bigger: True       # (bool) Whether to take a bigger valid metric value as a better result.
+eval_batch_size: 2048           # (int) The evaluation batch size.
+metric_decimal_place: 4  
+
+MAX_ITEM_LIST_LENGTH: 100
