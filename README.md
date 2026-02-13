@@ -24,7 +24,7 @@ pip install -r requirements.txt
 #### Using `conda`
 ```bash
 conda env create -f bole.yaml
-conda activate recbole-env
+conda activate bole
 ```
 
 > Ensure your GPU drivers are properly installed.  
